@@ -4,9 +4,12 @@ import PrimaryPrefixQuizReversed from './components/primaryPrefixQuizReversed'
 
 
 import data from './assets/countryCodes';
+import bandData from './assets/bands';
 import { useEffect, useState } from 'react';
 import { Button, ButtonGroup } from '@mui/material';
 import Spelling from './components/spelling';
+import Bands from './components/bands';
+import BandsReversed from './components/bandsReversed';
 
 function App() {
   const [filteredData, setFilteredData] = useState(data);
@@ -46,6 +49,10 @@ function App() {
       <PrimaryPrefixQuizReversed data={filteredData} primaryPrefixMap={primaryPrefixMap}/>
       <p>Spelling</p>
       <Spelling data={filteredData} primaryPrefixMap={primaryPrefixMap}/>
+      <p>Wavelength to Frequency</p>
+      <Bands data={bandData}/>
+      <p>Frequency to Wavelength</p>
+      <BandsReversed data={bandData}/>
     </>
   )
 }
